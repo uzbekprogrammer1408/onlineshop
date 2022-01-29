@@ -86,8 +86,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'onlineshop',
-        'USER': 'postgres',
-        'PASSWORD': '281426',
+        'USER': 'onlineshopuser',
+        'PASSWORD': 'passonlineshop',
         'HOST' : '127.0.0.1',
         'PORT' : '5432',
     }
