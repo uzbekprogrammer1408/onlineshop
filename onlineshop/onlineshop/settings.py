@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'users.apps.UsersConfig',
     'products.apps.ProductsConfig',
     'cart',
-    "verify_email.apps.VerifyEmailConfig"
+    'verify_email.apps.VerifyEmailConfig',
+    
 ]
 
 MIDDLEWARE = [
@@ -93,6 +94,16 @@ DATABASES = {
     }
 }
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'onlineshop',
+#         'USER': 'postgres',
+#         'PASSWORD': '281426',
+#         'HOST' : '127.0.0.1',
+#         'PORT' : '5432',
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators

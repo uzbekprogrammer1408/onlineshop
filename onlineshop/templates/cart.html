@@ -8,30 +8,30 @@ Body Section
 	<div class="row">
 	<div class="span12">
     <ul class="breadcrumb">
-		<li><a href="index.html">Home</a> <span class="divider">/</span></li>
-		<li class="active">Check Out</li>
+		<li><a href="{% url 'home' %}">Bosh sahifa</a> <span class="divider">/</span></li>
+		<li class="active">Buyurtmani rasmiylashtirish</li>
     </ul>
 	<div class="well well-small">
-		<h1>Check Out <small class="pull-right"> 2 Items are in the cart </small></h1>
+		<h1>Buyurtmani rasmiylashtirish <small class="pull-right"> 2 Items are in the cart </small></h1>
 	<hr class="soften"/>	
 
 	<table class="table table-bordered table-condensed">
               <thead>
                 <tr>
-                  <th>Product</th>
-                  <th>Description</th>
-				  <th>	Ref. </th>
-                  <th>Avail.</th>
-                  <th>Unit price</th>
-                  <th>Qty </th>
-                  <th>Total</th>
+                  <th>Kitob</th>
+                  <th>Ta'rif</th>
+				  <th> Havola </th>
+                  <th>Mavjudligi</th>
+                  <th>Narxi</th>
+                  <th>Miqdor </th>
+                  <th>Jami</th>
 				</tr>
               </thead>
               <tbody>
 				{% for key,product in request.session.cart.items %}
                 <tr>
                   <td><img width="100" src="{{ product.image }}" alt=""></td>
-                  <td>{{ product.name }}<br>Carate : 22<br>Model : n/a</td>
+                  <td>{{ product.name }}<br>{{ product.avtor }}<br>Nashr : n/a</td>
                   <td> - </td>
                   <td><span class="shopBtn"><span class="icon-ok"></span></span> </td>
                   <td>{{ product.price }} сум </td>
@@ -75,7 +75,7 @@ Body Section
                   <td> $448.42</td>
                 </tr> -->
 				 <tr>
-                  <td colspan="6" class="alignR">Total products:	</td>
+                  <td colspan="6" class="alignR">Jami kitoblar:	</td>
                   <td class="label label-primary"> $448.42</td>
                 </tr>
 				</tbody>
@@ -124,7 +124,7 @@ Body Section
 				  </tr>
               </tbody>
             </table>		 -->
-	<a href="products.html" class="shopBtn btn-large"><span class="icon-arrow-left"></span> Continue Shopping </a>
+	<a href="{% url 'products_page' %}" class="shopBtn btn-large"><span class="icon-arrow-left"></span> Xaridni davom ettirish </a>
 	<a href="login.html" class="shopBtn btn-large pull-right">Next <span class="icon-arrow-right"></span></a>
 
 </div>

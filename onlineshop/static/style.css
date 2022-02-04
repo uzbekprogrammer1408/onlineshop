@@ -58,7 +58,7 @@ hr.soften {margin: 8px 0;background: #DDD;}
 .navbar-search .search-query {padding: 4px 14px;-moz-border-radius: 1px;-webkit-border-radius: 1px;border-radius: 1px;line-height: 1.5em; min-width: 250px;}
 .navbar-search{margin-left:6px;}
 .actionList a{width:50%; font-size:11px; color:#444}
-.caption p{margin:0}
+.caption p{margin:0;}
 .caption h4{margin:0}
 .thumbnail .caption {padding: 9px;color: #555555;background: #F3F2F2;}
 .footer {background-color:#222; color:#eee; padding: 28px 8px 18px; margin-top: 18px;}

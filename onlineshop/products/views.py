@@ -1,4 +1,5 @@
-from django.shortcuts import render, redirect
+from unicodedata import category
+from django.shortcuts import get_object_or_404, render, redirect, get_list_or_404
 from .models import Product
 from django.contrib.auth.decorators import login_required
 from cart.cart import Cart
@@ -48,12 +49,19 @@ def cart_clear(request):
 def cart_detail(request):
     return render(request, 'cart.html')
 
-def products(request):
+def products(request, janr_slug=None):
+    janr = None
     janrlar = Kitobjanri.objects.all()
-    products = get_list_or_404(Product, status = True)[:18]
+    products = Product.objects.filter(status = True)[:18]
+
+    if janr_slug:
+        janr = get_object_or_404(Kitobjanri, slug=janr_slug)
+        products = get_list_or_404(Product, janr=janr)
 
     context = {
+        "janr":janr,
         "janrlar":janrlar,
         "products": products
     }
     return render(request, 'products.html', context=context)
+

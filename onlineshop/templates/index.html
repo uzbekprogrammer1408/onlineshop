@@ -9,8 +9,10 @@ Body Section
 <div id="sidebar" class="span3">
 <div class="well well-small">
 	<ul class="nav nav-list">
-		{% for janr in janrlar %}
-		<li><a href="{% url 'products_page' %}"><span class="icon-chevron-right"></span>{{ janr.name }}</a></li>
+		{% for j in janrlar %}
+		<li {% if janr.slug == j.slug %} class="selected" {% endif %}>
+			<a href="{{ j.get_absolute_url }}"><span class="icon-chevron-right"></span>{{ j.name }}</a>
+		</li>
 		{% endfor %}
 		<!-- <li><a href="products.html"><span class="icon-chevron-right"></span>Ilmiy ommabop</a></li>
 		<li><a href="products.html"><span class="icon-chevron-right"></span>Tarixiy</a></li>
