@@ -8,7 +8,7 @@ from django.db.models.deletion import CASCADE
 
 class Kitobjanri(models.Model):
     name =  models.CharField(verbose_name="Janr nomi", max_length=30, db_index=True)
-    slug = models.SlugField(max_length=200, unique=True)
+    slug = models.SlugField(max_length=200)
 
     class Meta:
         ordering = ("name",)
