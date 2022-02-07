@@ -3,21 +3,59 @@
 {% block title %} Ro'yhatdan o'tish {% endblock title %}
 {% block content %}
 
+<div class="row">
+	<div id="sidebar" class="span3">
+	<div class="well well-small">
+		<ul class="nav nav-list">
+			{% for j in janrlar %}
+			<li {% if janr.slug == j.slug %} class="selected" {% endif %}>
+				<a href="{{ j.get_absolute_url }}"><span class="icon-chevron-right"></span>{{ j.name }}</a>
+			</li>
+			{% endfor %}
+	
+			<!-- <li><a href="products.html"><span class="icon-chevron-right"></span>Fashion</a></li>
+			<li><a href="products.html"><span class="icon-chevron-right"></span>Watches</a></li>
+			<li><a href="products.html"><span class="icon-chevron-right"></span>Fine Jewelry</a></li>
+			<li><a href="products.html"><span class="icon-chevron-right"></span>Fashion Jewelry</a></li>
+			<li><a href="products.html"><span class="icon-chevron-right"></span>Engagement & Wedding</a></li>
+			<li><a href="products.html"><span class="icon-chevron-right"></span>Men's Jewelry</a></li>
+			<li><a href="products.html"><span class="icon-chevron-right"></span>Vintage & Antique</a></li>
+			<li><a href="products.html"><span class="icon-chevron-right"></span>Loose Diamonds </a></li>
+			<li><a href="products.html"><span class="icon-chevron-right"></span>Loose Beads</a></li>
+			<li><a href="products.html"><span class="icon-chevron-right"></span>See All Jewelry & Watches</a></li> -->
+			<li style="border:0"> &nbsp;</li>
+			<li> <a class="totalInCart" href="{% url 'cart_detail' %}"><strong>Jami savatchada  <span class="badge badge-warning pull-right" style="line-height:18px;">$448.42</span></strong></a></li>
+		</ul>
+	</div>
 
+			  <div class="well well-small alert alert-warning cntr">
+				  <h2>50% chegirma</h2>
+				  <p> 
+					 faqat online harid uchun. <br><br><a class="defaultBtn" href="#">Bu erga bosing </a>
+				  </p>
+			  </div>
+			  <div class="well well-small" ><a href="#"><img src="{% static 'assets/img/paypal.jpg' %}" alt="payment method paypal"></a></div>
+			
+			<a class="shopBtn btn-block" href="{% url 'products_page' %}">Yangi kitoblar <br><small>Ko'rish uchun bosing</small></a>
+			<br>
+			<br>		
+		
+
+	</div>
 
 	<div class="span9">
     <ul class="breadcrumb">
-		<li><a href="index.html">Home</a> <span class="divider">/</span></li>
-		<li class="active">Registration</li>
+		<li><a href="{% url 'home' %}">Bosh sahifa</a> <span class="divider">/</span></li>
+		<li class="active">Registratsiya</li>
     </ul>
-	<h3> Registration</h3>	
+	<h3> Registratsiya</h3>	
 	<hr class="soft"/>
 	<div class="well">
 	<form class="form-horizontal" method="post">
 		{% csrf_token %}
-		<h3>Your Personal Details</h3>
+		<h3>Shaxsiy ma'lumotlar</h3>
 		<div class="control-group">
-		<label class="control-label">Title <sup>*</sup></label>
+		<label class="control-label">Jinsingiz <sup>*</sup></label>
 		<div class="controls">
 			{{ form_r.title }}
 			<!-- <select class="span1" name="days">
@@ -29,14 +67,14 @@
 		</div>
 		</div>
 		<div class="control-group">
-			<label class="control-label" for="inputFname"> First name <sup>*</sup></label>
+			<label class="control-label" for="inputFname"> Ismingiz <sup>*</sup></label>
 			<div class="controls">
 			  {{ form_r.first_name }}
 			  <!-- <input type="text" id="inputFname" placeholder="First Name"> -->
 			</div>
 		 </div>
 		 <div class="control-group">
-			<label class="control-label" for="inputLname">Last name <sup>*</sup></label>
+			<label class="control-label" for="inputLname">Familiyangiz <sup>*</sup></label>
 			<div class="controls">
 			    {{ form_r.last_name }}
 			    <!-- <input type="text" id="inputLname" placeholder="Last Name"> -->
@@ -50,21 +88,21 @@
 		</div>
 	  </div>	  
 		<div class="control-group">
-		<label class="control-label">Password <sup>*</sup></label>
+		<label class="control-label">Parol tanlang <sup>*</sup></label>
 		<div class="controls">
 			{{ form_r.password1 }}
 			<!-- <input type="password" placeholder="Password"> -->
 		</div>
 	  </div>
 	  <div class="control-group">
-		<label class="control-label">Confirm Password <sup>*</sup></label>
+		<label class="control-label">Parolni qayta kiriting <sup>*</sup></label>
 		<div class="controls">
 			{{ form_r.password2 }}
 			<!-- <input type="password" placeholder="Confirm Password"> -->
 		</div>
 	  </div>	  
 	  <div class="control-group">
-		<label class="control-label" for="inputEmail">Card Number <sup>*</sup></label>
+		<label class="control-label" for="inputEmail">Karta raqami <sup>*</sup></label>
 		<div class="controls">
 			{{ form_r.card_number }}
 			<!-- <input type="text" placeholder="Email"> -->
@@ -107,7 +145,7 @@
 	  </div> -->
 	<div class="control-group">
 		<div class="controls">
-		 <input type="submit" name="submitAccount" value="Register" class="exclusive shopBtn">
+		 <input type="submit" name="submitAccount" value="Registratsiya" class="exclusive shopBtn">
 		</div>
 	</div>
 	</form>

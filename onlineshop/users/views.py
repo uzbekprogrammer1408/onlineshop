@@ -17,6 +17,10 @@ from django.shortcuts import render
 from django.template.loader import render_to_string
 from django.utils.encoding import force_bytes
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
+from products.models import Kitobjanri, Product
+from django.shortcuts import get_list_or_404
+
+
 
 def register(request):
     form_r = Register()
@@ -42,36 +46,16 @@ def register(request):
             email.send()
             return HttpResponse('Please confirm your email address to complete the registration')
 
-       
+    janrlar = Kitobjanri.objects.all()
+    products = get_list_or_404(Product, status = True)[:18]
+
+    
     context = {
-        'form_r': form_r
+        'form_r': form_r,
+        "janrlar":janrlar,
+        "products": products
     }
     return render(request, 'register.html', context=context)
-
-# def login_view(request):
-#     form_l = Login()
-
-#     if request.method == 'POST':
-#         form_l = AuthenticationForm(xrequest.POST)
-#         print(request.POST)
-#         if form_l.is_valid():
-            
-#             email = form_l.cleaned_data['email']
-#             password = form_l.cleaned_data['password']
-#             user = authenticate(email=email, password=password)
-#             print("1111111111111111111111111111111111")
-#             if user is not None:
-#                 login(request, user)
-#                 print("222222222222222222222222")
-#                 return redirect('/')
-
-
-
-        
-#     context = {
-#                 'form_l': form_l
-#             }
-#     return render(request, template_name='login.html', context=context)
 
 
 def logout_view(request):
@@ -96,7 +80,17 @@ def user_login(request):
                 return HttpResponse('Invalid login')
     else:
         form = LoginForm()
-    return render(request, 'login.html', {'form_l': form})
+
+    janrlar = Kitobjanri.objects.all()
+    products = get_list_or_404(Product, status = True)[:18]
+
+    
+    context = {
+        "form_l": form,
+        "janrlar":janrlar,
+        "products": products
+    }
+    return render(request, 'login.html', context=context)
 
 
 

@@ -46,9 +46,13 @@ urlpatterns = [
          views.item_decrement, name='item_decrement'),
     path('cart/cart_clear/', views.cart_clear, name='cart_clear'),
     path('cart/cart-detail/', views.cart_detail, name='cart_detail'),
+
     
     path('products/', views.products, name='products_page'),
 
     path('<slug:janr_slug>/', views.products, name='products_list_by_janr'),
 
+    path('product_details/', views.product_details, name='product_details'),
+
+    
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -7,15 +7,14 @@ from .models import CustomUser
 class Register(UserCreationForm):
     title = forms.ChoiceField(choices=(
         ('-', '-'),
-        ('Mr', 'Mr'),
-        ('Mrs', 'Mrs'),
-        ('Miss', 'Miss'),        
-    ))  
+        ('Erkak', 'Erkak'),
+        ('Ayol', 'Ayol')
+        ))  
     # date_of_birth = forms.DateField()
     
     email = forms.EmailField(widget = forms.EmailInput(attrs={"placeholder":"email"}))
-    first_name = forms.CharField(widget = forms.TextInput(attrs={"placeholder":"first name"}))
-    card_number = forms.IntegerField(widget = forms.TextInput(attrs={"placeholder":"card number"}))
+    first_name = forms.CharField(widget = forms.TextInput(attrs={"placeholder":"ism"}))
+    card_number = forms.IntegerField(widget = forms.TextInput(attrs={"placeholder":"karta raqami"}))
 
     # date_of_birth = forms.DateField(
     #     input_formats=['%d/%m/%Y'],
@@ -24,9 +23,9 @@ class Register(UserCreationForm):
     #         'data-target': '#datetimepicker1'
     #     })
     # )
-    last_name = forms.CharField(widget = forms.TextInput(attrs={"placeholder":"last name"}))
-    password1 = forms.CharField(widget = forms.PasswordInput(attrs={"placeholder":"password"}))
-    password2 = forms.CharField(widget = forms.PasswordInput(attrs={"placeholder":"confirm password"}))
+    last_name = forms.CharField(widget = forms.TextInput(attrs={"placeholder":"familiya"}))
+    password1 = forms.CharField(widget = forms.PasswordInput(attrs={"placeholder":"parol"}))
+    password2 = forms.CharField(widget = forms.PasswordInput(attrs={"placeholder":"parolni qayta kiritish"}))
 
     class Meta:
         model = CustomUser
