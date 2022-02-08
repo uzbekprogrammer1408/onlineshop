@@ -52,7 +52,7 @@ urlpatterns = [
 
     path('<slug:janr_slug>/', views.products, name='products_list_by_janr'),
 
-    path('product_details/', views.product_details, name='product_details'),
+    path('product_details/<int:id>/', views.product_details, name='product_details'),
 
     
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

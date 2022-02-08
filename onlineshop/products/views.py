@@ -66,12 +66,14 @@ def products(request, janr_slug=None):
     return render(request, 'products.html', context=context)
 
 def product_details(request, id):
-    # janrlar = Kitobjanri.objects.all()
-    # products = Product.objects.filter(status = True)
+    product = Product.objects.get(id=id)
+    janrlar = Kitobjanri.objects.all()
+    products = Product.objects.all()
 
-    # context = {
-    #     "janrlar":janrlar,
-    #     "products": products
-    # }
-    return render(request, 'product_details.html')
+    context = {
+        "product": product,
+        "janrlar": janrlar,
+        "products": products
+    }
+    return render(request, 'product_details.html', context=context)
 

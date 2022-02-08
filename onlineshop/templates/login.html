@@ -13,16 +13,6 @@
 			</li>
 			{% endfor %}
 	
-			<!-- <li><a href="products.html"><span class="icon-chevron-right"></span>Fashion</a></li>
-			<li><a href="products.html"><span class="icon-chevron-right"></span>Watches</a></li>
-			<li><a href="products.html"><span class="icon-chevron-right"></span>Fine Jewelry</a></li>
-			<li><a href="products.html"><span class="icon-chevron-right"></span>Fashion Jewelry</a></li>
-			<li><a href="products.html"><span class="icon-chevron-right"></span>Engagement & Wedding</a></li>
-			<li><a href="products.html"><span class="icon-chevron-right"></span>Men's Jewelry</a></li>
-			<li><a href="products.html"><span class="icon-chevron-right"></span>Vintage & Antique</a></li>
-			<li><a href="products.html"><span class="icon-chevron-right"></span>Loose Diamonds </a></li>
-			<li><a href="products.html"><span class="icon-chevron-right"></span>Loose Beads</a></li>
-			<li><a href="products.html"><span class="icon-chevron-right"></span>See All Jewelry & Watches</a></li> -->
 			<li style="border:0"> &nbsp;</li>
 			<li> <a class="totalInCart" href="{% url 'cart_detail' %}"><strong>Jami savatchada  <span class="badge badge-warning pull-right" style="line-height:18px;">$448.42</span></strong></a></li>
 		</ul>
@@ -39,42 +29,7 @@
 			<a class="shopBtn btn-block" href="{% url 'products_page' %}">Yangi kitoblar <br><small>Ko'rish uchun bosing</small></a>
 			<br>
 			<br>
-			<!-- <ul class="nav nav-list promowrapper">
-			{% for product in products %}
-				{% if product.id < 4 %}
-					<li>
-					<div class="thumbnail">
-						<a class="zoomTool" href="product_details.html" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
-						<img src="{{ product.image.url }}" alt="bootstrap ecommerce templates">
-						<div class="caption">
-						<h4><a class="defaultBtn" href="product_details.html">VIEW</a> <span class="pull-right">{{ product.price }}</span></h4>
-						</div>
-					</div>
-					</li>
-					<li style="border:0"> &nbsp;</li>
-				{% endif %}
-			{% endfor %} -->
-			<!-- <li>
-			  <div class="thumbnail">
-				<a class="zoomTool" href="product_details.html" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
-				<img src="assets/img/shopping-cart-template.png" alt="shopping cart template">
-				<div class="caption">
-				  <h4><a class="defaultBtn" href="product_details.html">VIEW</a> <span class="pull-right">$22.00</span></h4>
-				</div>
-			  </div>
-			</li>
-			<li style="border:0"> &nbsp;</li>
-			<li>
-			  <div class="thumbnail">
-				<a class="zoomTool" href="product_details.html" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
-				<img src="assets/img/bootstrap-template.png" alt="bootstrap template">
-				<div class="caption">
-				  <h4><a class="defaultBtn" href="product_details.html">VIEW</a> <span class="pull-right">$22.00</span></h4>
-				</div>
-			  </div>
-			</li> -->
-		  <!-- </ul> -->
-
+			
 	</div>
 	<div class="span9">
     <ul class="breadcrumb">
@@ -108,10 +63,7 @@
 			<h5>ALREADY REGISTERED ?</h5>
 			<form method="post">
 				{% csrf_token %}
-				<!-- {{form_l}}
-				<button type="submit">Ok</button> -->
-
-			  <div class="control-group">
+				<div class="control-group">
 				<label class="control-label" for="inputEmail">Email</label>
 				<div class="controls">
 					{{ form_l.email }}
